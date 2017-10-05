@@ -3,6 +3,10 @@ class User < ActiveRecord::Base
     has_many :owners
     has_many :messages
     has_many :posts
+    has_many :coments, as: :commentable
+
+    has_many :friendships, :foreign_key => "user_id", :class_name => "Friendship"
+    has_many :friends, :through => :friendships
       
     
     # all the blogs owned by a specific user
