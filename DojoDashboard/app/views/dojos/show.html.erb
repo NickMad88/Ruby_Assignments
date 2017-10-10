@@ -1,0 +1,16 @@
+<h1>Welcome to the <%= @dojos.branch %> branch!</h1>
+<h2> Details: </h2> <br>
+Branch Name: <%= @dojos.branch %><br>
+Street Name: <%= @dojos.street %><br>
+City Name: <%= @dojos.city %><br>
+State Name: <%= @dojos.state %>
+
+
+<br>
+<br>
+<form action="/dojos/<%= @dojos.id %>" method="post">
+<input type="hidden" name="_method" value="delete">
+<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+<input type="submit" value="Delete">
+<br>
+<a href="/dojos">Go back </a>

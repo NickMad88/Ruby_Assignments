@@ -1,7 +1,13 @@
 <h1> Dojo List </h1>
 
 <% @dojos.each do |a| %>
-<%= a.branch %> <%= a.street %> <%= a.city %> <%= a.state %><br><br>
+<%= a.branch %>
+ <%= a.street %> 
+ <%= a.city %> <%= a.state %> 
+ <a href="dojos/<%= a.id %>">SHOW</a>
+ <a href="dojos/<%= a.id %>/edit">EDIT</a>
+ <form action="/dojos/<%= a.id %>" method="post"><input type="hidden" name="_method" value="delete"><input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>"><input type="submit" value="Delete">
+ <br><br>
 <% end %>
 
 <a href="/dojos/new"> New Dojo </a>
