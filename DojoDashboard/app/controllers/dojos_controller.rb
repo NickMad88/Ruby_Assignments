@@ -13,6 +13,7 @@ class DojosController < ApplicationController
 
     def show
         @dojos = Dojo.find(params[:id])
+        @students = @dojos.students
     end
 
     def edit
@@ -27,8 +28,7 @@ class DojosController < ApplicationController
         dojos.state = params[:state]
         dojos.save
 
-        redirect_to '/dojos'
-                
+        redirect_to '/dojos'       
     end
 
     def destroy

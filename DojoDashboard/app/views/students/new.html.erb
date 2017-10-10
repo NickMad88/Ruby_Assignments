@@ -1,0 +1,10 @@
+<h1>Add a new student to: <%= @dojo.branch %> </h1>
+
+<form action="/dojos/<%= @dojo.id %>/students/" method="post">
+<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">​
+First Name:<input type="text" name="first_name"><br>
+Last Name:<input type="text" name="last_name"><br>
+Email:<input type="text" name="email"><br>
+<input type="hidden" name="dojo_id" value="<%= @dojo.id %>">
+<input type="submit" value="Add Student">
+</form>

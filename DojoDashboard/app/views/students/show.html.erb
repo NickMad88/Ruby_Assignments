@@ -1,0 +1,24 @@
+<h1> WOOOH </h2>
+
+
+<h1>Welcome to <%= @students.first_name %>'s Profile Page!!</h1>
+<br>
+<h2> Details: </h2>
+First Name: <%= @students.first_name %><br>
+Last Name: <%= @students.last_name %><br>
+Email: <%= @students.email %><br>
+Dojo Branch: <%= @dojos.branch %>
+
+
+<br>
+<br>
+<form action="/dojos/<%= @dojos.id %>/students/<%= @students.id %>" method="post">
+<input type="hidden" name="_method" value="delete">
+<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+<input type="submit" value="Delete">
+<br>
+<br>
+<a href="/dojos/<%= @dojos.id %>">Go back </a>
+
+
+
