@@ -6,7 +6,7 @@ class BankAccount
     def initialize
         @account_number = create_account
         @checking = 0
-        @savings = 0
+        @saving = 0
         @@bank_accounts += 1
         @interest_rate = 0.01
     end
@@ -27,16 +27,16 @@ class BankAccount
                 @checking -= amount
             end
         else
-            if @savings - amount < 0
-                raise "Insufficient Funds, you have #{@savings} in this account"
+            if @saving - amount < 0
+                raise "Insufficient Funds, you have #{@saving} in this account"
             else
-                @savings -= amount
+                @saving -= amount
             end
         end
     end
 
     def total
-        "Checking Balance: #{@checking}\nSaving Balance: #{@saving}\nTotal Balance: #{@checking + @savings}"
+        "Checking Balance: #{@checking}\nSaving Balance: #{@saving}\nTotal Balance: #{@checking + @saving}"
     end
 
     def account_information
