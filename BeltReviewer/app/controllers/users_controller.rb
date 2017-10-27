@@ -7,7 +7,7 @@ class UsersController < ApplicationController
       redirect_to events_path
     else
       flash[:errors] = @user.errors.full_messages
-      redirect_to new_sessions_path
+      redirect_to new_session_path
     end
   end
 
